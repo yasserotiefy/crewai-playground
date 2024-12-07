@@ -5,13 +5,17 @@ from pydantic import BaseModel
 
 from crewai.flow.flow import Flow, listen, start
 
-from .crews.stock_analysis_crew.stock_analysis_crew import StockAnalysisCrew
+from crews.stock_analysis_crew.stock_analysis_crew import StockAnalysisCrew
 
 import openlit
 
 openlit.init(
     otlp_endpoint="http://127.0.0.1:4318", 
 )
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class StockAnalysisState(BaseModel):
@@ -24,7 +28,7 @@ class StockAnalysisFlow(Flow[StockAnalysisState]):
     @start()
     def generate_company_name(self):
         print("Generating company name")
-        self.state.company_name = "CrewAI"
+        self.state.company_name = "Google"
 
     @listen(generate_company_name)    
     def generate_report(self):
@@ -41,7 +45,7 @@ class StockAnalysisFlow(Flow[StockAnalysisState]):
     @listen(generate_report)
     def save_report(self):
         print("Saving report")
-        with open("report.txt", "w") as f:
+        with open("report.md", "w") as f:
             f.write(self.state.report)
 
 

@@ -150,7 +150,7 @@ opentelemetry-exporter-otlp==1.28.2
 opentelemetry-exporter-otlp-proto-common==1.28.2
 opentelemetry-exporter-otlp-proto-grpc==1.28.2
 opentelemetry-exporter-otlp-proto-http==1.28.2
-opentelemetry-instrumentation==0.48b0
+opentelemetry-instrumentation==0.49b2
 opentelemetry-instrumentation-asgi==0.49b2
 opentelemetry-instrumentation-fastapi==0.49b2
 opentelemetry-proto==1.28.2
@@ -230,7 +230,7 @@ streamlit==1.40.2
 striprtf==0.0.26
 sympy==1.13.3
 tabulate==0.9.0
-tenacity==8.5.0
+tenacity==9.0.0
 tiktoken==0.7.0
 tokenizers==0.20.3
 toml==0.10.2

@@ -27,7 +27,11 @@ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 
 
 ```bash
-docker exec -it ollama ollama run llama2:7b
+docker exec -it ollama ollama run gemma:2b
+```
+
+```bash
+docker exec -it ollama ollama pull nomic-embed-text
 ```
 
 ### 2. Install required Python packages
@@ -35,4 +39,15 @@ docker exec -it ollama ollama run llama2:7b
 ```bash
 pip install -r requirements.txt
 ```
+
+### 3. Run the Stock Analysis Crew
+
+```bash
+python stock_analysis/src/stock_analysis/main.py
+```
+
+Open the `report.md` file to see the results.
+
+access the OpenLit dashboard at http://localhost:3000/
+
 
