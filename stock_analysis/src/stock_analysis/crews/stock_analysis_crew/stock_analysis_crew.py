@@ -1,7 +1,7 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-from stock_analysis.src.llm import llm, embedder
+from stock_analysis.src.config import llm, embedder
 
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -51,7 +51,7 @@ class StockAnalysisCrew:
             manager_llm=llm,
             share_crew=False,
             process=Process.sequential,
-            memory=True,
-            cache=True,
+            # memory=True,
+            # cache=True,
             embedder=embedder
         )
