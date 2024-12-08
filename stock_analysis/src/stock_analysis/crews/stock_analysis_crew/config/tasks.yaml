@@ -1,6 +1,6 @@
 write_finra_stock_report:
   description: >
-      Write a FINRA approved stock report about {company_ticker}.
+      Write a FINRA approved stock report about {company_ticker} in markdown format.
   expected_output: >
-    A FINRA approved stock report about {company_ticker}.
+    A FINRA approved stock report about {company_ticker} in markdown format.
   agent: finra_stock_report_writer

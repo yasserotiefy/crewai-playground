@@ -11,16 +11,10 @@ Requirements:
 ### 1. Install Dependencies
 
 
-#### Clone and setup OpenLit
+#### Setup Langtrace
 
 ```bash
-git clone git@github.com:openlit/openlit.git
-```
-
-#### Run OpenLit
-
-```bash
-cd openlit && docker compose up -d && cd ..
+export LANGTRACE_API_KEY=<your_api_key>
 ```
 
 
@@ -32,7 +26,7 @@ docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 
 
 ```bash
-docker exec -it ollama ollama run gemma:2b
+docker exec -it ollama ollama pull gemma:2b
 ```
 
 ```bash

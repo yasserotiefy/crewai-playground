@@ -1,21 +1,21 @@
 #!/usr/bin/env python
-from random import randint
-
 from pydantic import BaseModel
 
 from crewai.flow.flow import Flow, listen, start
 
 from src.stock_analysis.crews.stock_analysis_crew.stock_analysis_crew import StockAnalysisCrew
 
-import openlit
 
-openlit.init(
-    otlp_endpoint="http://127.0.0.1:4318", 
-)
+import os
 
 from dotenv import load_dotenv
 
 load_dotenv()
+
+from langtrace_python_sdk import langtrace
+
+langtrace.init(api_key = os.getenv('LANGTRACE_API_KEY'))
+
 
 
 class StockAnalysisState(BaseModel):
@@ -28,7 +28,7 @@ class StockAnalysisFlow(Flow[StockAnalysisState]):
     @start()
     def generate_company_ticker(self):
         print("Generating company ticker")
-        self.state.company_ticker = "MSFT"
+        self.state.company_ticker = "AAPL"
 
     @listen(generate_company_ticker)    
     def generate_report(self):
