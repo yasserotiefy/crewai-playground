@@ -1,5 +1,5 @@
 # Stock Analysis with CrewAI
-> Intelligent stock analysis using agent RAG (Retrieval Augmented Generation) architecture powered by CrewAI
+> Intelligent stock analysis using agent RAG (Retrieval Augmented Generation) architecture powered by CrewAI, Ollama, yfinance and OpenLit.
 
 ## Quick Start Guide
 
@@ -53,17 +53,35 @@ crewai flow kickoff
 
 Open the `report.md` file to see the results.
 
+#### Access the OpenLit dashboard at http://localhost:3000/
+
+**Default credentials:**
+- Email: user@openlit.io
+- Password: openlituser
+
+
+![OpenLit Dashboard](assets/openlit_view.gif)
+
 ### 4. Plot the Flow
 
 ```bash
 crewai flow plot
 ```
 
-Open the `crewai_flow.html` file to see the flow plot.
-access the OpenLit dashboard at http://localhost:3000/
+### 5. View the Flow Plot
 
-default credentials:
-Email: user@openlit.io
-Password: openlituser
+Open the `crewai_flow.html` file in your web browser to see an interactive visualization of the crew's workflow. The flow plot shows:
+
+- Agents and their roles
+- Task dependencies and execution order
+- Information flow between components
+
+![CrewAI Flow Plot](assets/crewai_flow.png)
+
+
+
+
+
+
 
 

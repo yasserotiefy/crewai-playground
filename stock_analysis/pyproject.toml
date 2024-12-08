@@ -8,7 +8,6 @@ dependencies = [
     "crewai[tools]>=0.86.0,<1.0.0",
     "llama-index==0.12.3",
     "openlit==1.32.8",
-    "pinecone==5.4.1",
     "promptflow==1.16.2",
     "yfinance[nospam]==0.2.50",
 ]

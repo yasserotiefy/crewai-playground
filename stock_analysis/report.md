@@ -1,1 +1,1 @@
-The current price of MSFT is $115.26. This information is based on the most recent price update from Yahoo Finance at 2023-08-27 06:29:20 PST.
+The current price of MSFT is $336.89.
