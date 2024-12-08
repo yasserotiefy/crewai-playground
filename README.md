@@ -42,7 +42,7 @@ docker exec -it ollama ollama pull nomic-embed-text
 ### 2. Install required Python packages
 
 ```bash
-cd stock_analysis && uv pip install -r pyproject.toml && cd ..
+cd stock_analysis && uv pip install -r pyproject.toml
 ```
 
 ### 3. Run the Stock Analysis Crew
