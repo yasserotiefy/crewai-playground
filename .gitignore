@@ -162,3 +162,5 @@ cython_debug/
 #.idea/
 
 crewai_memory_storage/
+
+yfinance.cache
