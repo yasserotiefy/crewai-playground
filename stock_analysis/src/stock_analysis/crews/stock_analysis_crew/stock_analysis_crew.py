@@ -1,7 +1,10 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-from stock_analysis.src.config import llm, embedder
+from src.config import ollama_llm, ollam_embedder
+from src.stock_analysis.tools.stock_info_tool import StockInfoTool
+
+
 
 # If you want to run a snippet of code before or after the crew starts,
 # you can use the @before_kickoff and @after_kickoff decorators
@@ -24,7 +27,8 @@ class StockAnalysisCrew:
     def finra_stock_report_writer(self) -> Agent:
         return Agent(
             config=self.agents_config["finra_stock_report_writer"],
-            llm=llm,
+            llm=ollama_llm,
+            tools=[StockInfoTool()]
         )
 
     # To learn more about structured task outputs,
@@ -34,7 +38,7 @@ class StockAnalysisCrew:
     def write_finra_stock_report(self) -> Task:
         return Task(
             config=self.tasks_config["write_finra_stock_report"],
-            llm=llm,
+            llm=ollama_llm,
         )
 
     @crew
@@ -47,11 +51,11 @@ class StockAnalysisCrew:
             agents=self.agents,  # Automatically created by the @agent decorator
             tasks=self.tasks,  # Automatically created by the @task decorator
             verbose=True,
-            planning_llm=llm,
-            manager_llm=llm,
+            planning_llm=ollama_llm,
+            manager_llm=ollama_llm,
             share_crew=False,
             process=Process.sequential,
             # memory=True,
             # cache=True,
-            embedder=embedder
+            embedder=ollam_embedder
         )
