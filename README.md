@@ -3,6 +3,11 @@
 
 ## Quick Start Guide
 
+Requirements:
+- Docker
+- Python >= 3.10 <= 3.13
+- pyenv
+
 ### 1. Install Dependencies
 
 
@@ -37,17 +42,28 @@ docker exec -it ollama ollama pull nomic-embed-text
 ### 2. Install required Python packages
 
 ```bash
-pip install -r requirements.txt
+cd stock_analysis && uv pip install -r pyproject.toml && cd ..
 ```
 
 ### 3. Run the Stock Analysis Crew
 
 ```bash
-python stock_analysis/src/stock_analysis/main.py
+crewai flow kickoff
 ```
 
 Open the `report.md` file to see the results.
 
+### 4. Plot the Flow
+
+```bash
+crewai flow plot
+```
+
+Open the `crewai_flow.html` file to see the flow plot.
 access the OpenLit dashboard at http://localhost:3000/
+
+default credentials:
+Email: user@openlit.io
+Password: openlituser
 
 

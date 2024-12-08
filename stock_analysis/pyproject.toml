@@ -10,7 +10,7 @@ dependencies = [
     "openlit==1.32.8",
     "pinecone==5.4.1",
     "promptflow==1.16.2",
-    "yfinance==0.2.50",
+    "yfinance[nospam]==0.2.50",
 ]
 
 [project.scripts]

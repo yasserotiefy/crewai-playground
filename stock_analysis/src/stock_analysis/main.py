@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 from crewai.flow.flow import Flow, listen, start
 
-from crews.stock_analysis_crew.stock_analysis_crew import StockAnalysisCrew
+from src.stock_analysis.crews.stock_analysis_crew.stock_analysis_crew import StockAnalysisCrew
 
 import openlit
 
@@ -19,24 +19,24 @@ load_dotenv()
 
 
 class StockAnalysisState(BaseModel):
-    company_name: str = ""
+    company_ticker: str = ""
     report: str = ""
 
 
 class StockAnalysisFlow(Flow[StockAnalysisState]):
 
     @start()
-    def generate_company_name(self):
-        print("Generating company name")
-        self.state.company_name = "Google"
+    def generate_company_ticker(self):
+        print("Generating company ticker")
+        self.state.company_ticker = "MSFT"
 
-    @listen(generate_company_name)    
+    @listen(generate_company_ticker)    
     def generate_report(self):
         print("Generating report")
         result = (
             StockAnalysisCrew()
             .crew()
-            .kickoff(inputs={"company_name": self.state.company_name})
+            .kickoff(inputs={"company_ticker": self.state.company_ticker})
         )
 
         print("Report generated", result.raw)

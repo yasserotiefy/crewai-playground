@@ -1,8 +1,8 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-from stock_analysis.src.config import ollama_llm, ollam_embedder
-from stock_analysis.src.stock_analysis.tools.stock_info_tool import StockInfoTool
+from src.config import ollama_llm, ollam_embedder
+from src.stock_analysis.tools.stock_info_tool import StockInfoTool
 
 
 
