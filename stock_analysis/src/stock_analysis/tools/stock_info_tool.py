@@ -4,7 +4,6 @@ from crewai.tools import BaseTool
 from pydantic import BaseModel, Field
 
 import yfinance as yf
-from yfinance import Ticker
 
 from requests import Session
 from requests_cache import CacheMixin, SQLiteCache

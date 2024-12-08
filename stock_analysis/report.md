@@ -1,4 +1,3 @@
-```markdown
 # Apple Inc. (AAPL) Stock Report
 
 **Financial Summary**
@@ -28,4 +27,3 @@
 * **Dividend per Share (TTM):** Measures a company's ability to pay dividends to its shareholders. A high dividend per share indicates that a company is paying out more dividends per share of stock.
 
 **Disclaimer:** This report is for informational purposes only and should not be considered financial advice.
-```
