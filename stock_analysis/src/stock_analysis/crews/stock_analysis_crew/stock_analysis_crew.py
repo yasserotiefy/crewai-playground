@@ -1,6 +1,8 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
+from crewai_tools import ScrapeWebsiteTool
+
 from src.config import ollama_llm, ollam_embedder
 from src.stock_analysis.tools.stock_info_tool import StockInfoTool
 
@@ -28,7 +30,7 @@ class StockAnalysisCrew:
         return Agent(
             config=self.agents_config["finra_stock_report_writer"],
             llm=ollama_llm,
-            tools=[StockInfoTool()]
+            tools=[StockInfoTool(), ScrapeWebsiteTool()]
         )
 
     # To learn more about structured task outputs,
@@ -39,6 +41,7 @@ class StockAnalysisCrew:
         return Task(
             config=self.tasks_config["write_finra_stock_report"],
             llm=ollama_llm,
+            tools=[StockInfoTool(), ScrapeWebsiteTool()]
         )
 
     @crew

@@ -1,87 +1,43 @@
-# Stock Analysis with CrewAI
-> Intelligent stock analysis using agent RAG (Retrieval Augmented Generation) architecture powered by CrewAI, Ollama, yfinance and OpenLit.
+# CrewAI Playground
 
-## Quick Start Guide
+A collection of example projects built using CrewAI to demonstrate various AI agent collaboration patterns and use cases.
 
-Requirements:
-- Docker
+## Projects
+
+### 1. Stock Analysis
+Intelligent stock analysis using agent RAG (Retrieval Augmented Generation) architecture powered by CrewAI, Ollama, yfinance and Langtrace.
+
+[View Project Details](stock_analysis/)
+
+Features:
+- Multi-agent collaboration for comprehensive stock analysis
+- Integration with yfinance for real-time market data
+- Visualization of agent workflows using CrewAI Flow
+- Caching and rate limiting for API calls
+- LangTrace integration for monitoring and debugging
+
+## Getting Started
+
+Each project contains its own README with specific setup instructions. Generally, you'll need:
+
 - Python >= 3.10 <= 3.13
-- pyenv
+- Docker for running Ollama and other services
+- Required Python packages specified in each project's pyproject.toml
 
-### 1. Install Dependencies
+## Contributing
 
+Feel free to contribute your own CrewAI projects or improvements to existing ones:
 
-#### Clone and setup OpenLit
+1. Fork the repository
+2. Create a new branch for your project
+3. Add your project with clear documentation
+4. Submit a pull request
 
-```bash
-git clone git@github.com:openlit/openlit.git
-```
+## License
 
-#### Run OpenLit
+This repository is licensed under the MIT License - see the LICENSE file for details.
 
-```bash
-cd openlit && docker compose up -d && cd ..
-```
+## Resources
 
-
-#### Setup Ollama
-
-```bash
-docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-```
-
-
-```bash
-docker exec -it ollama ollama run gemma:2b
-```
-
-```bash
-docker exec -it ollama ollama pull nomic-embed-text
-```
-
-### 2. Install required Python packages
-
-```bash
-cd stock_analysis && uv pip install -r pyproject.toml && cd ..
-```
-
-### 3. Run the Stock Analysis Crew
-
-```bash
-crewai flow kickoff
-```
-
-Open the `report.md` file to see the results.
-
-#### Access the OpenLit dashboard at http://localhost:3000/
-
-**Default credentials:**
-- Email: user@openlit.io
-- Password: openlituser
-
-
-![OpenLit Dashboard](assets/openlit_view.gif)
-
-### 4. Plot the Flow
-
-```bash
-crewai flow plot
-```
-
-### 5. View the Flow Plot
-
-Open the `crewai_flow.html` file in your web browser to see an interactive visualization of the crew's workflow. The flow plot shows:
-
-- Agents and their roles
-- Task dependencies and execution order
-- Information flow between components
-
-![CrewAI Flow Plot](assets/crewai_flow.png)
-
-
-
-
-
-
-
-
+- [CrewAI Documentation](https://docs.crewai.com/)
+- [CrewAI GitHub](https://github.com/joaomdmoura/crewAI)
