@@ -47,14 +47,9 @@ crewai flow kickoff
 
 Open the `report.md` file to see the results.
 
-#### Access the OpenLit dashboard at http://localhost:3000/
-
-**Default credentials:**
-- Email: user@openlit.io
-- Password: openlituser
 
 
-![OpenLit Dashboard](assets/openlit_view.gif)
+![Langtrace Dashboard](assets/langtrace.gif)
 
 ### 4. Plot the Flow
 
